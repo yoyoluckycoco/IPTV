@@ -34,7 +34,6 @@ jobs:
 
       - name: 合并文件
         run: python ${{ github.workspace }}/py/hebing.py
-
       - name: 提交更改
         run: |
           git config --local user.email "csszue@gmail.com"  # 设置 Git 用户邮箱
@@ -45,4 +44,4 @@ jobs:
 
           git commit -m "$(TZ=Asia/Shanghai date +'%Y-%m-%d %H:%M:%S') ：更新直播源"
           git pull --rebase
-          git push
+          git push https://${{ secrets.GH_TOKEN }}@github.com/MemoryCollection/IPTV.git
