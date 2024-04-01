@@ -1,0 +1,35 @@
+name: 采集  # 工作流的名称
+
+
+on:
+  workflow_dispatch:
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+    
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+
+      - name: Install dependencies
+        run: pip install selenium requests futures eventlet
+
+      - name: Run itv
+        run: python ${{ github.workspace }}/py/itv.py
+     
+      - name: 提交更改
+        run: |
+          git config --local user.email "csszue@gmail.com"  # 设置 Git 用户邮箱
+          git config --local user.name "MemoryCollection"  # 设置 Git 用户名
+          git add tv/*  # 添加 tv/ 目录下的所有文件
+
+          git commit -m "Update files in TV directory at $(TZ=Asia/Shanghai date +'%Y-%m-%d %H:%M:%S')"
+          git pull --rebase
+          git push
