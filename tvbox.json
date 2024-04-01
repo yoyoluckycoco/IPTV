@@ -47,7 +47,7 @@
 {"name":"米饭🌾","type":0,"url":"https://jx.yangtu.top/?url=","ext":{"flag":["爱奇艺","奇艺","qq","腾讯","youku","优酷","pptv","PPTV","letv","乐视","leshi","bilibili","哔哩哔哩","哔哩","mgtv","芒果","芒果"],"header":{"User-Agent":"Mozilla/5.0(Linux;Android6.0;Nexus5Build/MRA58N)AppleWebKit/537.36(KHTML,likeGecko)Chrome/120.0.0.0MobileSafari/537.36"}}}
 ],
 "lives":[
-{"name":"IPv4","type":0,"url":"https://raw.gitmirror.com/MemoryCollection/IPTV/main/itv.txt","ua":"okhttp/3.12.13","epg":"https://epg.112114.xyz/?ch={name}&date={date}","logo":"https://epg.112114.xyz/logo/{name}.png"}
+{"name":"IPv4","type":0,"url":"https://raw.gitmirror.com/MemoryCollection/IPTV/main/itvlist.txt","ua":"okhttp/3.12.13","epg":"https://epg.112114.xyz/?ch={name}&date={date}","logo":"https://epg.112114.xyz/logo/{name}.png"}
 ],
 "doh":[
 {"name":"Google","url":"https://dns.google/dns-query","ips":["8.8.4.4","8.8.8.8"]},
