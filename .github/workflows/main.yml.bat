@@ -34,14 +34,13 @@ jobs:
 
       - name: 合并文件
         run: python ${{ github.workspace }}/py/hebing.py
+        
       - name: 提交更改
         run: |
           git config --local user.email "csszue@gmail.com"  # 设置 Git 用户邮箱
           git config --local user.name "MemoryCollection"  # 设置 Git 用户名
-          cp tv/itvlist.txt ./  # 将 tv/itvlist.txt 文件复制到根目录
           git add tv/*  # 添加 tv/ 目录下的所有文件
-          git add itvlist.txt  # 添加根目录下的 itvlist.txt 文件
 
-          git commit -m "$(TZ=Asia/Shanghai date +'%Y-%m-%d %H:%M:%S') ：更新直播源"
-          git pull --rebase
-          git push https://${{ secrets.GH_TOKEN }}@github.com/MemoryCollection/IPTV.git
+          git commit -m "$(TZ=Asia/Shanghai date +'%Y-%m-%d %H:%M:%S') ：采集"
+          #git pull --rebase
+          git push -f
